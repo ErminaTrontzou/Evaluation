@@ -1,0 +1,33 @@
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.searchButton{
+    background-color: #6675df;
+    color : white;
+}
+
+.justify-content-center{
+    margin-top: 250px;
+}
+body{
+    background-image: url("../images/key_background.jpg");
+}
+
+.card-body{
+    background-color: #fbf7f7;
+}
+
+.form-control{
+    background-color:#fbf7f7 ;
+}
+
+.fas{
+    color: #6675df;
+}
