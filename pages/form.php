@@ -12,6 +12,10 @@
     $row = mysqli_fetch_assoc($query);
     $teacherName = $row["last_name"]." ".$row["first_name"];
     $subjectTitle = $row["title"];
+
+    $query=mssql_query($sql,'SELECT * 
+                                        FROM evaluation_key
+                                        JOIN student ON student.id = ')
 ?>
 
 <html>
@@ -19,8 +23,11 @@
         <title>Evaluation</title>
     </head>
     <body>
-        <div>
+        <div class="title">
             <h1>Αξιολόγηση για το μάθημα <?= $subjectTitle ?> </h1>
+        </div>
+        <div>
+
         </div>
     </body>
 </html>
