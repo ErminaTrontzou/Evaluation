@@ -13,9 +13,9 @@
     $teacherName = $row["last_name"]." ".$row["first_name"];
     $subjectTitle = $row["title"];
 
-    $query=mssql_query($sql,'SELECT * 
-                                        FROM evaluation_key
-                                        JOIN student ON student.id = ')
+//    $query=mssql_query($sql,'SELECT *
+//                                        FROM evaluation_key
+//                                        JOIN student ON student.id = ')
 ?>
 
 <html>
