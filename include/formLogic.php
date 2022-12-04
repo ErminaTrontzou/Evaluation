@@ -30,7 +30,7 @@ $mathimaQuestionsValues = array();
     var_dump($key);
     var_dump($mathimaQuestionsValues);
     for($i=0;$i<sizeof($mathimaQuestion);$i++){
-        $query=mysqli_query($sql,"INSERT INTO student_answer (question_id, key_id, rating) VALUES ('$mathimaID[$i]','$key','$mathimaQuestionsValues[$i]')");
+        $query=mysqli_query($sql,"INSERT INTO student_answer (question_id, key_id, rating) VALUES ('$mathimaID[$i]','$key[0]','$mathimaQuestionsValues[$i]')");
     }
 
 
