@@ -2,15 +2,9 @@
     session_start();
     require('../include/config.php');
     $sessionID = $_SESSION["id"];
+    $student_key = $_POST["token"];
 
-//    $query=mysqli_query($sql, "SELECT * FROM subject WHERE ");
-//    $row = mysqli_fetch_assoc($query);
-//    $mathimaUlh = $_POST["mathima-ulh"];
-//    $mathimaOrganoshYlhs = $_POST["mathima-organosh-ulh"];
-//    $mathimaYliko = $_POST["mathima-uliko"];
-//    $mathimaProhgoumenaMathimata = $_POST["mathima-prohgoumena-mathimata"];
-
-    $query=mysqli_query($sql,'SELECT id FROM evaluation_key WHERE student_id = "' .$sessionID.'"');
+    $query=mysqli_query($sql,'SELECT id FROM evaluation_key WHERE student_id = "' .$sessionID.'" AND value = "' .$student_key.'"');
     $key = mysqli_fetch_row($query);
 
 
@@ -36,8 +30,7 @@ $mathimaQuestionsValues = array();
     var_dump($key);
     var_dump($mathimaQuestionsValues);
     for($i=0;$i<sizeof($mathimaQuestion);$i++){
-
-       $query=mysqli_query($sql,"INSERT INTO student_answer (question_id,key_id,rating) VALUES ('$mathimaID[$i]','$key','$mathimaQuestionsValues[$i]')");
+        $query=mysqli_query($sql,"INSERT INTO student_answer (question_id, key_id, rating) VALUES ('$mathimaID[$i]','$key','$mathimaQuestionsValues[$i]')");
     }
 
 

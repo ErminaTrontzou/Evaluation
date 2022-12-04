@@ -2,7 +2,6 @@
     session_start();
     require('../include/config.php');
     $student_key=$_GET["token"];
-
     $query=mysqli_query($sql, 'SELECT *
                                     FROM evaluation_key 
                                     JOIN subject ON subject.id = evaluation_key.subject_id 
@@ -79,7 +78,7 @@ $query=mysqli_query($sql,'SELECT *
         <div class="title">
             <form  method="post" action="../include/formLogic.php">
                 <h1>Αξιολόγηση για το μάθημα <span style=" color:orangered"><?= $subjectTitle ?></span> του <span style=" color:orangered"><?= $teacherName?></span> </h1>
-                <br align="left">
+                <br>
                 <div class="content">
                     <h3>Ερωτήσεις για το μάθημα </h3>
                     <?php
@@ -130,13 +129,11 @@ $query=mysqli_query($sql,'SELECT *
                     }
                     ?>
                     <br><br>
+                    <input type="hidden" name='token' value='<?=$student_key?>'>
                     <button class="btn btn-lg submitButton" type="submit">Submit</button>
                     </div>
-                </div
+                </div>
             </form>
-        </div>
-        <div>
-
         </div>
     </body>
 </html>
