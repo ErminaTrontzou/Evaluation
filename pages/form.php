@@ -37,7 +37,7 @@ $query=mysqli_query($sql,'SELECT *
     }
     $askiseisID = array();
     for($i=0;$i<sizeof($row);$i++){
-        $askiseisID[$i]= $row[$i][0];
+        $askiseisID[$i]= $row[$i][1];
     }
 
     $query=mysqli_query($sql,'SELECT *
@@ -50,7 +50,7 @@ $query=mysqli_query($sql,'SELECT *
     }
     $didaskonID = array();
     for($i=0;$i<sizeof($row);$i++){
-        $didaskonID[$i]= $row[$i][0];
+        $didaskonID[$i]= $row[$i][1];
     }
 
     $query=mysqli_query($sql,'SELECT *
@@ -63,7 +63,7 @@ $query=mysqli_query($sql,'SELECT *
     }
     $foiththsID = array();
     for($i=0;$i<sizeof($row);$i++){
-        $foiththsID[$i]= $row[$i][0];
+        $foiththsID[$i]= $row[$i][1];
     }
 
 ?>
