@@ -41,6 +41,19 @@ $query=mysqli_query($sql,'SELECT *
     }
 
     $query=mysqli_query($sql,'SELECT *
+                                FROM question
+                                WHERE code_name LIKE "ergasies%"');
+    $row = mysqli_fetch_all($query);
+    $ergasiesQuestion = array();
+    for($i=0;$i<sizeof($row);$i++){
+        $ergasiesQuestion[$i]= $row[$i][2];
+    }
+    $ergasiesID = array();
+    for($i=0;$i<sizeof($row);$i++){
+        $ergasiesID[$i]= $row[$i][1];
+    }
+
+    $query=mysqli_query($sql,'SELECT *
                                             FROM question
                                             WHERE code_name LIKE "didaskon%"');
     $row = mysqli_fetch_all($query);
@@ -103,6 +116,19 @@ $query=mysqli_query($sql,'SELECT *
                         echo "<input type='radio' value='3' name='$askiseisID[$i]' >3";
                         echo "<input type='radio' value='4' name='$askiseisID[$i]' >4";
                         echo "<input type='radio' value='5' name='$askiseisID[$i]' >5";
+                        echo "</p> </div>";
+                    }
+                    ?>
+                    <h3>Ερωτήσεις για τις εργασίες </h3>
+                    <?php
+                    for ($i = 0; $i < sizeof($ergasiesQuestion); $i++ ){
+                        echo "<div><p>".$ergasiesQuestion[$i]."</p></div>";
+                        echo "<div>";
+                        echo "<input type='radio' value='1' name='$ergasiesID[$i]' >1";
+                        echo "<input type='radio' value='2' name='$ergasiesID[$i]' >2";
+                        echo "<input type='radio' value='3' name='$ergasiesID[$i]' >3";
+                        echo "<input type='radio' value='4' name='$ergasiesID[$i]' >4";
+                        echo "<input type='radio' value='5' name='$ergasiesID[$i]' >5";
                         echo "</p> </div>";
                     }
                     ?>

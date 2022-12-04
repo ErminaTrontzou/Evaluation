@@ -46,6 +46,24 @@
     }
 
 
+    /**********************ERWTHSEIS GIA TIS ASKISEIS**********************/
+    $query=mysqli_query($sql, 'SELECT * 
+                                FROM question 
+                                WHERE code_name LIKE "ergasies%"');
+    $row = mysqli_fetch_all($query);
+    $ergasiaQuestion = array();
+    $ergasiaID = array();
+    $ergasiaQuestionsValues = array();
+    for($i=0;$i<sizeof($row);$i++){
+        $ergasiaQuestion[$i] = $row[$i][1];
+        array_push($ergasiaID, $row[$i][0]);
+        array_push($ergasiaQuestionsValues, $_POST[$askishQuestion[$i]]);
+    }
+    for($i=0;$i<sizeof($ergasiaQuestion);$i++){
+        $query=mysqli_query($sql,"INSERT INTO student_answer (question_id, key_id, rating) 
+                                    VALUES ('$ergasiaID[$i]', '$key[0]', '$ergasiaQuestionsValues[$i]')");
+    }
+
 
     /**********************ERWTHSEIS GIA TON KATHIGITI**********************/
     $query=mysqli_query($sql, 'SELECT * 
