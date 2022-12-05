@@ -102,4 +102,11 @@
     }
 
 
+
+    /**********************Making the studen key unusable for future uses**********************/
+    $query=mysqli_query($sql, 'UPDATE evaluation_key
+                                SET is_done = 1
+                                WHERE  value = "' .$student_key.'"');
+
+
     header("Location: ../pages/completed.php");
