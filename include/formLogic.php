@@ -100,3 +100,6 @@
         $query=mysqli_query($sql, "INSERT INTO student_answer (question_id, key_id, rating) 
                                     VALUES ('$foiththsID[$i]', '$key[0]', '$foiththsQuestionsValues[$i]')");
     }
+
+
+    header("Location: ../pages/completed.php");
