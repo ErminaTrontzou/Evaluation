@@ -7,9 +7,9 @@
                                     WHERE student.id ="' .$sessionID .'"');
     $row = mysqli_fetch_assoc($query);
     $studentName = $row["username"];
-   $error = $_GET["error"];
-   $formError = $_GET["formError"];
-   $userError = $_GET["userError"];
+   $error = @$_GET["error"];
+   $formError = @$_GET["formError"];
+   $userError = @$_GET["userError"];
 ?>
 
 <html>

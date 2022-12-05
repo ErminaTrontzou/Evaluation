@@ -11,7 +11,7 @@
         die();
     }
     if($row["student_id"] != $sessionID){
-        header("Location: ..pages/key.php?userError=true");
+        header("Location: ../pages/key.php?userError=true");
         die();
     }
     if($row["is_done"] == 1){
