@@ -7,9 +7,9 @@
                                     WHERE student.id ="' .$sessionID .'"');
     $row = mysqli_fetch_assoc($query);
     $studentName = $row["username"];
-//    $error = $_GET["error"];
-//    $formError = $_GET["formError"];
-//    $userError = $_GET["userError"];
+   $error = $_GET["error"];
+   $formError = $_GET["formError"];
+   $userError = $_GET["userError"];
 ?>
 
 <html>
@@ -56,38 +56,38 @@
 </div>
 
 
-//<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-//  <div class="modal-dialog modal-dialog-centered" role="document">
-//    <div class="modal-content">
-//      <div class="modal-header">
-//        <h5 class="modal-title" id="exampleModalLongTitle">Unable to Enter Key</h5>
-//        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-//          <span aria-hidden="true">&times;</span>
-//        </button>
-//      </div>
-//      <div class="modal-body">
-//        <?php
-//        if($error){
-//            echo "Your key is an invalid code.";
-//        }
-//        if($formError){
-//            echo "Your key has already been used.";
-//        }
-//        if($userError){
-//            echo "This key is not connected to your profile.";
-//        }
-//        ?>
-<!--      </div>-->
-<!--      <div class="modal-footer">-->
-<!--        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-<!---->
-<?php //if($error || $formError || $userError){
-//    echo"<script> $('#exampleModalCenter').modal('toggle');</script>";
-//}?>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Unable to Enter Key</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+                <?php
+            if($error){
+                echo "Your key is an invalid code.";
+            }
+            if($formError){
+                echo "Your key has already been used.";
+            }
+            if($userError){
+                echo "This key is not connected to your profile.";
+            }
+            ?>
+            </div>
+      <div class="modal-footer">    
+        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<?php if($error || $formError || $userError){
+    echo"<script> $('#exampleModalCenter').modal('toggle');</script>";
+}?>
 
 </body>
 </html>
