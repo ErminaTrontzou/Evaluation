@@ -85,80 +85,103 @@ $query=mysqli_query($sql,'SELECT *
     <head>
         <title>Evaluation</title>
         <link href="../css/formStyle.css" rel="stylesheet">
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
     </head>
     <body>
         <div class="title">
             <form  method="post" action="../include/formLogic.php">
-                <h1>Αξιολόγηση για το μάθημα <span style=" color:orangered"><?= $subjectTitle ?></span> του <span style=" color:orangered"><?= $teacherName?></span> </h1>
+                <h1>Αξιολόγηση για το μάθημα <span style=" color:orangered"><?= $subjectTitle ?></span> από <span style=" color:orangered"><?= $teacherName?></span> </h1>
                 <br>
                 <div class="content">
-                    <h3>Ερωτήσεις για το μάθημα </h3>
-                    <?php
-                    for ($i = 0; $i < sizeof($mathimaQuestion); $i++ ){
-                        echo "<div> <p>".$mathimaQuestion[$i]."</div>";
-                        echo "<div>";
-                        echo "<input type='radio' value='1' name='$mathimaID[$i]' >1";
-                        echo "<input type='radio' value='2' name='$mathimaID[$i]' >2";
-                        echo "<input type='radio' value='3' name='$mathimaID[$i]' >3";
-                        echo "<input type='radio' value='4' name='$mathimaID[$i]' >4";
-                        echo "<input type='radio' value='5' name='$mathimaID[$i]' >5";
-                        echo "</p> </div>";
-                    }
-                    ?>
-                    <h3>Ερωτήσεις για τις ασκήσεις </h3>
-                    <?php
-                    for ($i = 0; $i < sizeof($askiseisQuestion); $i++ ){
-                        echo "<div><p>".$askiseisQuestion[$i]."</p></div>";
-                        echo "<div>";
-                        echo "<input type='radio' value='1' name='$askiseisID[$i]' >1";
-                        echo "<input type='radio' value='2' name='$askiseisID[$i]' >2";
-                        echo "<input type='radio' value='3' name='$askiseisID[$i]' >3";
-                        echo "<input type='radio' value='4' name='$askiseisID[$i]' >4";
-                        echo "<input type='radio' value='5' name='$askiseisID[$i]' >5";
-                        echo "</p> </div>";
-                    }
-                    ?>
-                    <h3>Ερωτήσεις για τις εργασίες </h3>
-                    <?php
-                    for ($i = 0; $i < sizeof($ergasiesQuestion); $i++ ){
-                        echo "<div><p>".$ergasiesQuestion[$i]."</p></div>";
-                        echo "<div>";
-                        echo "<input type='radio' value='1' name='$ergasiesID[$i]' >1";
-                        echo "<input type='radio' value='2' name='$ergasiesID[$i]' >2";
-                        echo "<input type='radio' value='3' name='$ergasiesID[$i]' >3";
-                        echo "<input type='radio' value='4' name='$ergasiesID[$i]' >4";
-                        echo "<input type='radio' value='5' name='$ergasiesID[$i]' >5";
-                        echo "</p> </div>";
-                    }
-                    ?>
-                    <h3>Ερωτήσεις για τον καθηγητή </h3>
-                    <?php
-                    for ($i = 0; $i < sizeof($didaskonQuestion); $i++ ){
-                        echo "<div><p>".$didaskonQuestion[$i]."</p></div>";
-                        echo "<input type='radio' value='1' name='$didaskonID[$i]' >1";
-                        echo "<input type='radio' value='2' name='$didaskonID[$i]' >2";
-                        echo "<input type='radio' value='3' name='$didaskonID[$i]' >3";
-                        echo "<input type='radio' value='4' name='$didaskonID[$i]' >4";
-                        echo "<input type='radio' value='5' name='$didaskonID[$i]' >5";
-                    }
-                    ?>
-                    <h3>Ερωτήσεις για τον Φοιτητή </h3>
-                    <?php
-                    for ($i = 0; $i < sizeof($foiththsQuestion); $i++ ){
-                        echo "<div><p>".$foiththsQuestion[$i]."</p></div>";
-                        echo "<input type='radio' value='1' name='$foiththsID[$i]' >1";
-                        echo "<input type='radio' value='2' name='$foiththsID[$i]' >2";
-                        echo "<input type='radio' value='3' name='$foiththsID[$i]' >3";
-                        echo "<input type='radio' value='4' name='$foiththsID[$i]' >4";
-                        echo "<input type='radio' value='5' name='$foiththsID[$i]' >5";
-                    }
-                    ?>
-                    <br><br>
+                    <table>
+                        <tr>
+                            <td>
+                            <h3>Ερωτήσεις για το μάθημα </h3>
+                            <?php
+                                for ($i = 0; $i < sizeof($mathimaQuestion); $i++ ){
+                                    echo "<div> <p>".$mathimaQuestion[$i]."</p></div>";
+                                    echo "<div ><p>";
+                                    echo "<input type='radio' value='1' name='$mathimaID[$i]' >1";
+                                    echo "<input type='radio' value='2' name='$mathimaID[$i]' >2";
+                                    echo "<input type='radio' value='3' name='$mathimaID[$i]' >3";
+                                    echo "<input type='radio' value='4' name='$mathimaID[$i]' >4";
+                                    echo "<input type='radio' value='5' name='$mathimaID[$i]' >5";
+                                    echo "</p></div>";
+                                }
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3>Ερωτήσεις για τις ασκήσεις </h3>
+                                <?php
+                                for ($i = 0; $i < sizeof($askiseisQuestion); $i++ ){
+                                    echo "<div><p>".$askiseisQuestion[$i]."</p></div>";
+                                    echo "<div>";
+                                    echo "<input type='radio' value='1' name='$askiseisID[$i]' >1";
+                                    echo "<input type='radio' value='2' name='$askiseisID[$i]' >2";
+                                    echo "<input type='radio' value='3' name='$askiseisID[$i]' >3";
+                                    echo "<input type='radio' value='4' name='$askiseisID[$i]' >4";
+                                    echo "<input type='radio' value='5' name='$askiseisID[$i]' >5";
+                                    echo "</p> </div>";
+                                }
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3>Ερωτήσεις για τις εργασίες </h3>
+                                <?php
+                                for ($i = 0; $i < sizeof($ergasiesQuestion); $i++ ){
+                                    echo "<div><p>".$ergasiesQuestion[$i]."</p></div>";
+                                    echo "<div>";
+                                    echo "<input type='radio' value='1' name='$ergasiesID[$i]' >1";
+                                    echo "<input type='radio' value='2' name='$ergasiesID[$i]' >2";
+                                    echo "<input type='radio' value='3' name='$ergasiesID[$i]' >3";
+                                    echo "<input type='radio' value='4' name='$ergasiesID[$i]' >4";
+                                    echo "<input type='radio' value='5' name='$ergasiesID[$i]' >5";
+                                    echo "</p> </div>";
+                                }
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3>Ερωτήσεις για τον καθηγητή </h3>
+                                <?php
+                                for ($i = 0; $i < sizeof($didaskonQuestion); $i++ ){
+                                    echo "<div><p>".$didaskonQuestion[$i]."</p></div>";
+                                    echo "<input type='radio' value='1' name='$didaskonID[$i]' >1";
+                                    echo "<input type='radio' value='2' name='$didaskonID[$i]' >2";
+                                    echo "<input type='radio' value='3' name='$didaskonID[$i]' >3";
+                                    echo "<input type='radio' value='4' name='$didaskonID[$i]' >4";
+                                    echo "<input type='radio' value='5' name='$didaskonID[$i]' >5";
+                                }
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3>Ερωτήσεις για τον Φοιτητή </h3>
+                                <?php
+                                for ($i = 0; $i < sizeof($foiththsQuestion); $i++ ){
+                                    echo "<div><p>".$foiththsQuestion[$i]."</p></div>";
+                                    echo "<input type='radio' value='1' name='$foiththsID[$i]' >1";
+                                    echo "<input type='radio' value='2' name='$foiththsID[$i]' >2";
+                                    echo "<input type='radio' value='3' name='$foiththsID[$i]' >3";
+                                    echo "<input type='radio' value='4' name='$foiththsID[$i]' >4";
+                                    echo "<input type='radio' value='5' name='$foiththsID[$i]' >5";
+                                }
+                                ?>
+                            </td>
+                        </tr>
+                                <br><br>
+                    </table>
                     <input type="hidden" name='token' value='<?=$student_key?>'>
-                    <button class="btn btn-lg submitButton" type="submit">Submit</button>
+
                     </div>
                 </div>
+                <button class="submitButton" type="submit">Submit</button>
             </form>
         </div>
     </body>

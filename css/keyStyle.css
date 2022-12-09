@@ -8,8 +8,12 @@
     box-shadow: none;
 }
 
+h1, h2{
+    color:#42032C;
+}
+
 .searchButton{
-    background-color: #6675df;
+    background-color: green;
     color : white;
 }
 
@@ -17,7 +21,7 @@
     margin-top: 250px;
 }
 body{
-    background-image: url("../images/key_background.jpg");
+    background-image: url("../images/new-key-background.jpg");
 }
 
 .card-body{
@@ -29,5 +33,5 @@ body{
 }
 
 .fas{
-    color: #6675df;
+    color: green;
 }

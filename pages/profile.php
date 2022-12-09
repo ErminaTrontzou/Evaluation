@@ -42,18 +42,12 @@ $row = mysqli_fetch_assoc($query);
                 </div>
                 <div class="col-md-6">
                     <div class="profile-head">
-                        <h5>
-                            <?= $studentFullName?>
-                        </h5>
+                        <h3>
+                            </br><?= $studentFullName?>
+                        </h3>
                         <h6>
                             Student
                         </h6>
-                        <br/>
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>

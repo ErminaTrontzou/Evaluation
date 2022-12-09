@@ -31,8 +31,9 @@
 <body>
 <div>
     <h3 align="right"><b>Γειά σου </b><a href="profile.php"><span style="color:green"> <?= $studentName ?></span></a> !</h3>
-    <h1 align="center"><b>Πλατφόρμα αξιολόγησης μαθημάτων έτους 2022</b></h1>
+    <h1 align="center"><b>Πλατφόρμα αξιολόγησης μαθημάτων έτους 2022</b> </h1>
     <h2 align="center"><b>Διεθνές Πανεπιστήμιο της Χώρας του Ποτέ</b></h2>
+
 </div>
 <div class="container">
     <div class="row justify-content-center">
