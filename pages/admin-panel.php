@@ -15,6 +15,11 @@
     </head>
     <body>
     <h1 align="center">Καλωσήρθες <b> admin </b> </h1>
+    <div align="center">
+        <form  method="post" action="../include/logoutLogic.php">
+            <input  type="submit" name="logout" value="Logout"/>
+        </form>
+    </div>
     </br></br></br>
     <img src="../images/admin.jpg">
     </br></br></br>
