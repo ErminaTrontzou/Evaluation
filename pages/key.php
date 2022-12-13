@@ -3,8 +3,8 @@
     require('../include/config.php');
     $sessionID = $_SESSION["id"];
     $query=mysqli_query($sql, 'SELECT *
-                                    FROM student
-                                    WHERE student.id ="' .$sessionID .'"');
+                                    FROM users
+                                    WHERE users.id ="' .$sessionID .'"');
     $row = mysqli_fetch_assoc($query);
     $studentName = $row["username"];
    $error = @$_GET["error"];
@@ -31,8 +31,14 @@
 <body>
 <div>
     <h3 align="right"><b>Γειά σου </b><a href="profile.php"><span style="color:green"> <?= $studentName ?></span></a> !</h3>
+    <div align="right">
+        <form  method="post" action="../include/logoutLogic.php">
+            <input  type="submit" name="logout" value="Logout"/>
+        </form>
+    </div>
     <h1 align="center"><b>Πλατφόρμα αξιολόγησης μαθημάτων έτους 2022</b> </h1>
     <h2 align="center"><b>Διεθνές Πανεπιστήμιο της Χώρας του Ποτέ</b></h2>
+
 
 </div>
 <div class="container">

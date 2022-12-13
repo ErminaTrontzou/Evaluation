@@ -17,7 +17,7 @@
     <div class="container" style="margin-top: 5%">
         <div class="row">
             <div class="logout col-sm-6" style="text-align: center">    
-                <form method="post" action="../include/completedLogic.php">
+                <form method="post" action="../include/logoutLogic.php">
                     <button type="submit" class="btn btn-light">Αποσύνδεση</button>
                 </form>
             </div>

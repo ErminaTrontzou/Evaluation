@@ -3,8 +3,8 @@ session_start();
 require('../include/config.php');
 $sessionID = $_SESSION["id"];
 $query=mysqli_query($sql, 'SELECT *
-                                    FROM student
-                                    WHERE student.id ="' .$sessionID .'"');
+                                    FROM users
+                                    WHERE users.id ="' .$sessionID .'"');
 $row = mysqli_fetch_assoc($query);
     $studentFullName = $row["last_name"]." ".$row["first_name"];
     $studentUsername = $row["username"];

@@ -4,19 +4,6 @@
     require('include/config.php');
 ?>
 
-
-<!--<html>-->
-<!--    <head>-->
-<!--        <title>Hey</title>-->
-<!--    </head>-->
-<!--    <body>-->
-<!--        <p>Hey</p>-->
-<!--    <form action="index.php" method="post">-->
-<!--        <input type="text"/>-->
-<!--    </form>-->
-<!--    </body>-->
-<!--</html>-->
-
 <html>
 <head>
     <title>
